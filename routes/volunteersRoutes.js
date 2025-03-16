@@ -16,6 +16,7 @@ router.post("/find-nearest-volunteers", async (req, res) => {
             return res.status(400).json({ error: "Missing or invalid parameters" });
         }
 
+console.log("¿? Supabase client:", supabase);
         // Fetch all volunteer drivers from Supabase
         const { data: drivers, error } = await supabase
             .from("users")
