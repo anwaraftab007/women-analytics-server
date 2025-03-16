@@ -16,11 +16,12 @@ app.use(express.json());
 const locationRoutes = require("./routes/locationRoutes");
 const alertRoutes = require("./routes/alertRoutes");
 const notificationRoutes = require("./routes/notificationRoutes");
-
+const volunteersRoutes = require("./routes/volunteersRoutes");
 // Use Routes
 app.use("/api/location", locationRoutes);
 app.use("/api/alert", alertRoutes);
 app.use("/api/notification", notificationRoutes);
+app.use("/api/volunteers", volunteersRoutes);
 
 // ¿? Live Location Updates via WebSockets
 io.on("connection", (socket) => {
