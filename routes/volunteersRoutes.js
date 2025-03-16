@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const haversine = require("haversine-distance"); // Ensure this is installed via npm
-const supabase = require("../supabaseClient"); // Import your Supabase instance
+const supabase = require("../config/supabaseClient"); // Import your Supabase instance
 
 router.post("/find-nearest-volunteers", async (req, res) => {
     try {
