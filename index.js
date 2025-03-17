@@ -22,7 +22,23 @@ app.use("/api/location", locationRoutes);
 app.use("/api/alert", alertRoutes);
 app.use("/api/notification", notificationRoutes);
 app.use("/api/volunteers", volunteersRoutes);
+app.use("/testing", (req, res) => {
+    const { use_u, lat, long } = req.body;
 
+    if (!use_u || !lat || !long) {
+        return res.status(400).json({ message: "Missing required fields!" });
+    }
+
+    res.json({
+        status: "Working",
+        message: "Received the details successfully!",
+        data: {
+            user_id: use_u,
+            latitude: lat,
+            longitude: long
+        }
+    });
+});
 // ¿? Live Location Updates via WebSockets
 io.on("connection", (socket) => {
   console.log("Client connected:", socket.id);
