@@ -4,7 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const socketIo = require("socket.io");
 const http = require("http");
-const { supabase } = require("./supabaseClient"); // ¿? Import Supabase client
+const { supabase } = require("./config/supabaseClient"); // ¿? Import Supabase client
 
 dotenv.config();
 const app = express();
